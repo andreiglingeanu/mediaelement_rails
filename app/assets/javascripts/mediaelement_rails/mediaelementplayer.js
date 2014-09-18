@@ -554,13 +554,13 @@ if (typeof jQuery != 'undefined') {
 						// for touch devices (iOS, Android)
 						// show/hide without animation on touch
 
-						t.$media.bind('touchstart', function() {
-
-
-							// toggle controls
-							if (t.controlsAreVisible) {
+						t.$media.bind('tap', function() {
+							// toggle play state
+							if (t.media.paused) {
+								t.play();
 								t.hideControls(false);
 							} else {
+								t.pause();
 								if (t.controlsEnabled) {
 									t.showControls(false);
 								}
