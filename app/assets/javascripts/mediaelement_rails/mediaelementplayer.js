@@ -656,6 +656,11 @@ if (typeof jQuery != 'undefined') {
 					}
 
 					t.hasFocus = true;
+					
+					// hide controls after play but wait for 3 secs
+					setTimeout(function () {
+						t.hideControls(false);
+					}, 3000);
 				},false);
 
 
@@ -1001,6 +1006,7 @@ if (typeof jQuery != 'undefined') {
 				if (!mejs.MediaFeatures.isiPhone) {
 					bigPlay.show();
 				}
+				t.showControls(false);
 			}, false);
 
 			media.addEventListener('waiting', function() {
