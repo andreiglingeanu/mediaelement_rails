@@ -1591,7 +1591,7 @@ if (typeof jQuery != 'undefined') {
 
 	$.extend(mejs.MepDefaults, {
 		muteText: mejs.i18n.t('Mute Toggle'),
-		hideVolumeOnTouchDevices: true,
+		hideVolumeOnTouchDevices: false,
 		
 		audioVolume: 'horizontal',
 		videoVolume: 'vertical'
@@ -1630,6 +1630,7 @@ if (typeof jQuery != 'undefined') {
 					'</div>'+
 				'</div>')
 					.appendTo(controls),
+
 			volumeSlider = t.container.find('.mejs-volume-slider, .mejs-horizontal-volume-slider'),
 			volumeTotal = t.container.find('.mejs-volume-total, .mejs-horizontal-volume-total'),
 			volumeCurrent = t.container.find('.mejs-volume-current, .mejs-horizontal-volume-current'),
@@ -1738,6 +1739,11 @@ if (typeof jQuery != 'undefined') {
 			},
 			mouseIsDown = false,
 			mouseIsOver = false;
+
+			if (mejs.MediaFeatures.isAndroid || mejs.MediaFeatures.isiOS) {
+				$(controls).find('.mejs-volume-slider').remove();
+			}
+
 
 			// SLIDER
 			
