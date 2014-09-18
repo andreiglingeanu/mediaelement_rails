@@ -824,8 +824,6 @@ if (typeof jQuery != 'undefined') {
 				playButton = playLayer.find('.mejs-overlay-button');
 
 			playLayer.height(t.container.height() - t.controls.height());
-			playButton.css('margin-top', '-' + (playButton.height()/2 - t.controls.height()/2).toString() + 'px'  );
-
 		},
 
 		setControlsSize: function() {
