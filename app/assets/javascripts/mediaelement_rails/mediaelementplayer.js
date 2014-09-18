@@ -956,7 +956,7 @@ if (typeof jQuery != 'undefined') {
 					'<div class="mejs-overlay-button"></div>'+
 				'</div>')
 				.appendTo(layers)
-				.bind('click touchstart', function() {
+				.bind('click tap', function() {
 					if (t.options.clickToPlayPause) {
 						if (media.paused) {
 							media.play();
