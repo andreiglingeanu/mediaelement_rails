@@ -1396,7 +1396,7 @@ if (typeof jQuery != 'undefined') {
 			// handle clicks
 			//controls.find('.mejs-time-rail').delegate('span', 'click', handleMouseMove);
 			total
-				.bind('mousedown touchstart', function (e) {
+				.bind('mousedown tap', function (e) {
 					// only handle left clicks or touch
 					if (e.which === 1 || e.which === 0) {
 						mouseIsDown = true;
